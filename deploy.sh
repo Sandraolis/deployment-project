@@ -1,8 +1,6 @@
 #!/bin/bash
-# ============================================
+
 # Stage 1 DevOps Project - Automated Deployment Script
-# Author: Sandra Olisama
-# ============================================
 
 set -e
 LOG_FILE="deploy_$(date +%Y%m%d_%H%M%S).log"
