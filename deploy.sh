@@ -121,13 +121,13 @@ echo "[INFO] Running deployment validation..."
 ssh -p "$SSH_PORT" "$SSH_USER@$SSH_HOST" bash <<'EOF'
 set -e
 echo "[REMOTE] Checking Docker container status..."
-sudo docker ps | grep myapp && echo "[REMOTE] ✅ Docker container running."
+sudo docker ps | grep myapp && echo "[REMOTE] Docker container running."
 
 echo "[REMOTE] Checking Nginx service..."
-sudo systemctl status nginx | grep active && echo "[REMOTE] ✅ Nginx is active."
+sudo systemctl status nginx | grep active && echo "[REMOTE] Nginx is active."
 
 echo "[REMOTE] Performing curl check..."
-curl -I http://localhost | grep "200 OK" && echo "[REMOTE] ✅ App responding successfully."
+curl -I http://localhost | grep "200 OK" && echo "[REMOTE] App responding successfully."
 EOF
 
 # === 9. Cleanup & Idempotency ===
